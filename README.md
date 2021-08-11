@@ -41,3 +41,7 @@ manager.Register(
 )
 go manager.Run(nil)
 ```
+
+### Considerations
+
+If you're running your server as a cluster, each instance in the cluster will attempt to independently manage the cronjobs. This will likely result in duplicated work and undefined behavior. This library does not (yet) handle this situation.
